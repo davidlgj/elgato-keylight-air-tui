@@ -385,6 +385,7 @@ dependencies = [
  "ratatui",
  "serde",
  "serde_json",
+ "tempergb",
 ]
 
 [[package]]
@@ -1259,6 +1260,12 @@ dependencies = [
  "quote",
  "syn",
 ]
+
+[[package]]
+name = "tempergb"
+version = "0.1.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "681bde77f9c90db65fa3259ece4f5b99725437560572010554f9f470a28f823f"
 
 [[package]]
 name = "thread_local"

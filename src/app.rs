@@ -4,11 +4,12 @@ use color_eyre::Result;
 use crossterm::event::{self, Event, KeyCode, KeyEvent, KeyEventKind, KeyModifiers};
 use ratatui::{
     layout::{Constraint, Direction, Layout},
-    style::{Style, Stylize},
+    style::{Color, Style, Stylize},
     text::Line,
     widgets::{Block, Gauge},
     DefaultTerminal, Frame,
 };
+use tempergb::rgb_from_temperature;
 
 #[derive(Debug, Default)]
 pub struct App {
@@ -70,12 +71,31 @@ impl App {
             "<Q> ".light_magenta().bold(),
         ]);
 
+        let bright_style = if self.on {
+            Style::new().white().on_black().italic()
+        } else {
+            Style::new().dark_gray().on_black().italic()
+        };
+
         let brightness_gauge = Gauge::default()
-            .gauge_style(Style::new().white().on_black().italic())
+            .gauge_style(bright_style)
             .percent(self.brightness as u16);
+
+        let ratio = f64::from(self.temperature.clamp(143, 344) - 143) / 201.0;
+        let temp_in_kelvin = f64::floor(4100.0 * (1.0 - ratio) + 2900.0);
+        let temp_style = if self.on {
+            let rgb = rgb_from_temperature(temp_in_kelvin);
+            Style::new()
+                .fg(Color::Rgb(rgb.r(), rgb.g(), rgb.b()))
+                .on_black()
+                .italic()
+        } else {
+            Style::new().dark_gray().on_black().italic()
+        };
         let temperature_gauge = Gauge::default()
-            .gauge_style(Style::new().white().on_black().italic())
-            .ratio(f64::from(self.temperature.clamp(143, 344) - 143) / 201.0);
+            .gauge_style(temp_style)
+            .ratio(ratio)
+            .label(format!("{} K", temp_in_kelvin));
 
         let outer_layout = Layout::default()
             .direction(Direction::Vertical)

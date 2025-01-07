@@ -18,6 +18,11 @@ https://github.com/user-attachments/assets/e8a47f2d-4688-4b1f-a116-0aca9f8d8ed2
  * Needs to take ip address of light since I have a some network "challenges" and the light is behind a NAT
  * Must work on both Mac OS X (untested) and Linux since I'm forced to use Mac at work.
 
+
+## Thanks
+
+Thanks to @adamesch for his repo documenting the API of the lamp, https://github.com/adamesch/elgato-key-light-api
+
 ## License
 
 Copyright (c) David Jensen <david.lgj@gmail.com>
