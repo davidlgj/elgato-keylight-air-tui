@@ -43,7 +43,6 @@ pub fn fetch_light_status(ip: &str) -> Light {
         panic!("Failed to get a successful response status! Is the key light on?");
     }
     let res: Lights = response.json().expect("Could not parse JSON");
-    print!("{:?}", res);
 
     // There is always just one on the key light
     res.lights
