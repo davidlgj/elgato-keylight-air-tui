@@ -6,6 +6,13 @@ an excuse to play around a bit with Rust :)
 
 I.e. this is probably not what you want.
 
+
+
+https://github.com/user-attachments/assets/e8a47f2d-4688-4b1f-a116-0aca9f8d8ed2
+
+
+
+
 ### Design requirements
 
  * Needs to take ip address of light since I have a some network "challenges" and the light is behind a NAT
