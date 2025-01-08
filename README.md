@@ -1,26 +1,16 @@
 # Simple Elgato Keylight Air TUI
 
 This is a super simple TUI to control brightness and temperature of my Elgato Keylight Air.
-There are already a couple of different options to do this and I mainly created this as
+There are already a couple of different options to control the lamp out there, so I mainly created this as
 an excuse to play around a bit with Rust :)
-
-I.e. this is probably not what you want.
-
-
-
 
 https://github.com/user-attachments/assets/880659ac-3cd1-44f8-bc80-c7272732fc4e
 
 
-
-
-
-
 ### Design requirements
 
- * Needs to take ip address of light since I have a some network "challenges" and the light is behind a NAT
- * Must work on both Mac OS X (untested) and Linux since I'm forced to use Mac at work.
-
+ * Needs to take ip address of the lamp since I have a some "network challenges" and the lamp is behind a NAT
+ * Must work on both Mac OS X and Linux since I'm forced to use Mac at work (Only works in terminals with full color).
 
 ## Thanks
 
