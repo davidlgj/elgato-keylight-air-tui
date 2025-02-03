@@ -12,5 +12,5 @@ color-eyre = "0.6.3"
 clap = { version = "4.5.23", features = ["derive"] }
 isahc = { version = "1.7.2", features = ["json"] }
 serde = { version = "1.0.217", features = ["derive"] }
-serde_json = "1.0.134"
+serde_json = "1.0.138"
 tempergb = "0.1.2"
